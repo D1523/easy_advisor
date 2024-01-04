@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { CssBaseline, Grid } from '@material-ui/core';
 
-import { getPlacesData, getWeatherData } from './api/travelAdvisorAPI';
+import { getPlacesData } from './api/travelAdvisorAPI';
 import Header from './components/Header/Header';
 import List from './components/List /List';
 import Map from './components/Map/Map';
@@ -31,7 +31,7 @@ const App = () => {
     const filtered = places.filter((place) => Number(place.rating) > rating);
 
     setFilteredPlaces(filtered);
-  }, [rating]);
+  }, [rating, places]);
 
   useEffect(() => {
     if (bounds) {
@@ -48,7 +48,7 @@ const App = () => {
           setIsLoading(false);
         });
     }
-  }, [bounds, type]);
+  }, [bounds, type, coords.lat, coords.lng]);
 
   const onLoad = (autoC) => setAutocomplete(autoC);
 

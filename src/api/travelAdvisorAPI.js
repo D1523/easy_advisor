@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 import axios from 'axios';
 
 export const getPlacesData = async (type, sw, ne) => {
@@ -10,14 +11,17 @@ export const getPlacesData = async (type, sw, ne) => {
         tr_latitude: ne.lat,
       },
       headers: {
-                'X-RapidAPI-Key': 'a3e4954750mshb6a0ee0ed4a64f1p17bc3ejsncaf0b5cfc8e4',
-                'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com'
-            },
-        });
-    
-        return data;
-      } catch (error) {
-        console.log(error);
-      }
-    };
+        'X-RapidAPI-Key': '6c0708fdf4msh5d2f0d3132a4dc2p18470fjsnf1e238713be5',
+        'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com'
+      },
+            });
+        
+            return data;
+          } catch (error) {
+            console.log(error);
+          }
+        };
+
+
+
 
